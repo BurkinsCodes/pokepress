@@ -16,7 +16,6 @@ registerBlockType( 'pokepress/block', {
         const [ pokemonOptions, setPokemonOptions ] = useState( [] );
 
         useEffect( () => {
-            // Fetch list of Pokemon for selection
             fetch( 'https://pokeapi.co/api/v2/pokemon?limit=100' )
                 .then( res => res.json() )
                 .then( data => {
@@ -64,6 +63,6 @@ registerBlockType( 'pokepress/block', {
     },
 
     save() {
-        return null; // Will be rendered dynamically by PHP
+        return null;
     }
 });

@@ -3,16 +3,11 @@
 namespace PokePress;
 
 class PokePress {
-
-    // Initialize the plugin
     public static function init() {
-        // Register block
         add_action( 'init', [ __CLASS__, 'register_block' ] );
     }
 
-    // Register Block
     public static function register_block() {
-        // Register Block Script
         wp_register_script(
             'pokepress-block-js',
             plugins_url( 'assets/js/block.js', __FILE__ ),
@@ -20,7 +15,6 @@ class PokePress {
             filemtime( plugin_dir_path( __FILE__ ) . '../assets/js/block.js' )
         );
 
-        // Register Block Style
         wp_register_style(
             'pokepress-block-style',
             plugins_url( 'assets/css/style.css', __FILE__ ),
@@ -28,7 +22,6 @@ class PokePress {
             filemtime( plugin_dir_path( __FILE__ ) . '../assets/css/style.css' )
         );
 
-        // Register Block Type
         register_block_type( 'pokepress/block', [
             'editor_script' => 'pokepress-block-js',
             'editor_style'  => 'pokepress-block-style',
@@ -36,7 +29,6 @@ class PokePress {
         ] );
     }
 
-    // Render block callback
     public static function render_block( $attributes ) {
         $pokemon = isset( $attributes['pokemonData'] ) ? $attributes['pokemonData'] : null;
 

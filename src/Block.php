@@ -3,10 +3,7 @@
 namespace PokePress;
 
 class Block {
-
-    // Enqueue necessary scripts and styles
     public static function enqueue_assets() {
-        // Enqueue the block editor JS
         wp_enqueue_script(
             'pokepress-block-js',
             plugins_url( 'assets/js/block.js', __FILE__ ),
@@ -15,7 +12,6 @@ class Block {
             true
         );
 
-        // Enqueue the block CSS
         wp_enqueue_style(
             'pokepress-block-style',
             plugins_url( 'assets/css/style.css', __FILE__ ),

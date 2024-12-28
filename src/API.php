@@ -3,8 +3,6 @@
 namespace PokePress;
 
 class API {
-
-    // Fetch data for a specific Pokemon
     public static function get_pokemon_data( $pokemon_id ) {
         $response = wp_remote_get( "https://pokeapi.co/api/v2/pokemon/{$pokemon_id}" );
 
