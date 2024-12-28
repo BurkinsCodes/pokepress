@@ -1,0 +1,15 @@
+{
+    "name": "dylanburkins/pokepress",
+    "autoload": {
+        "psr-4": {
+            "DylanBurkins\\Pokepress\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dylan Burkins",
+            "email": "dylan@burkins.dev"
+        }
+    ],
+    "require": {}
+}
