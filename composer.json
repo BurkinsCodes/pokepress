@@ -2,7 +2,7 @@
     "name": "dylanburkins/pokepress",
     "autoload": {
         "psr-4": {
-            "DylanBurkins\\Pokepress\\": "src/"
+            "PokePress\\": "src/"
         }
     },
     "authors": [

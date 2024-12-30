@@ -8,26 +8,14 @@ class PokePress {
     }
 
     public static function register_block() {
-        wp_register_script(
-            'pokepress-block-js',
-            plugins_url( 'assets/js/block.js', __FILE__ ),
-            [ 'wp-blocks', 'wp-editor', 'wp-element', 'wp-components' ],
-            filemtime( plugin_dir_path( __FILE__ ) . '../assets/js/block.js' )
-        );
-
-        wp_register_style(
-            'pokepress-block-style',
-            plugins_url( 'assets/css/style.css', __FILE__ ),
-            [],
-            filemtime( plugin_dir_path( __FILE__ ) . '../assets/css/style.css' )
-        );
-
+        Block::enqueue_assets();
+    
         register_block_type( 'pokepress/block', [
-            'editor_script' => 'pokepress-block-js',
-            'editor_style'  => 'pokepress-block-style',
+            'editor_script'   => 'pokepress-block-js',
+            'editor_style'    => 'pokepress-block-style',
             'render_callback' => [ __CLASS__, 'render_block' ],
         ] );
-    }
+    }    
 
     public static function render_block( $attributes ) {
         $pokemon = isset( $attributes['pokemonData'] ) ? $attributes['pokemonData'] : null;
